@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+	<h1>About Page</h1>
+	<p>This is a template</p>
+	
+	<p>
+		{{ my_text }}, {{ my_number }}
+	</p>
+
+	<ul>
+	{% for my_subitem in my_list %}
+		{% if my_subitem < 41 %}
+			<li>{{ forloop.counter }} - {{ my_subitem }} (passed)</li>
+		{% else %}
+			<li>{{ forloop.counter }} - {{ my_subitem }} (not passed)</li>
+		{% endif %}
+	{% endfor %}
+	</ul>
+
+{% endblock content %}
